@@ -9,7 +9,6 @@ const getCars = () => {
   .then(data => {
     console.log('get all cars', data);
     renderCars(data);
-    clearForm();
   });
 }
 getCars()
@@ -59,12 +58,5 @@ form.addEventListener('submit', (event) => {
   })
   console.log('form data', carData);
   createCar(carData);
+  form.reset();
 })
-
-// Part 2.2 Clear the form after the post request
-const clearForm = () => {
-  document.getElementById('brand').value = '';
-  document.getElementById('model').value = '';
-  document.getElementById('plate').value = '';
-  document.getElementById('owner').value = '';
-}
