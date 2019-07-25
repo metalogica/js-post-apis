@@ -43,7 +43,10 @@ const createCar = (formData) => {
     },
     body: JSON.stringify(formData)
   })
-  .then(getCars())
+  .then(response => response.json())
+  .then(data => {
+    setTimeout(getCars(), 1000)
+  })
 }
 
 // Part 2.1: Build event listener on form to submit create car API call
